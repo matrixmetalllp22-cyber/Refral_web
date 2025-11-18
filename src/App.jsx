@@ -121,7 +121,7 @@ function App() {
     <BrowserRouter>
       <div className="flex flex-col min-h-screen select-none">
         <Header />
-        <main className="flex-grow pt-16 bg-gradient-to-br from-slate-50 to-blue-900">
+        <main className="flex-grow pt-16 bg-gradient-to-br from-slate-50 to-gray-300">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

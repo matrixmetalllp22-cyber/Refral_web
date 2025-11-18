@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ImageSlider from "../components/ImageSlider";
 import IndustriesSection from "../components/IndustriesSection";
 import KeyProducts from "../components/KeyProducts";
+import { motion } from "framer-motion";
 import LeadershipAndClients from "../components/LeadershipAndClients";
 
 export default function Home() {
@@ -99,50 +100,55 @@ export default function Home() {
       </section> */}
 
       {/* About Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="heading-secondary mb-6 p-15">
-                Engineering Tomorrow's Solutions
-              </h2>
-              <p className="text-content mb-6 p-15">
-                With decades of experience in industrial solutions, we deliver innovative
-                technologies and services that drive efficiency and sustainability across
-                multiple sectors.
-              </p>
-              {/* <Link
-                to="/about"
-                className="text-blue-600 hover:text-blue-700 font-semibold flex items-center"
-              >
-                Learn More
-                <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link> */}
-            </div>
+     <section className="py-20 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 relative overflow-hidden">
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-  {[
-    { number: "50+", label: "Years Experience", icon: "⏳" },
-    { number: "1000+", label: "Projects Completed", icon: "🚀" },
-    { number: "20+", label: "Countries Served", icon: "🌍" },
-    { number: "500+", label: "Expert Team", icon: "👨‍💻" },
-  ].map((item, index) => (
-    <div
-      key={index}
-      className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100 
-                 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center"
-    >
-      <div className="text-4xl mb-3">{item.icon}</div>
-      <h3 className="font-extrabold text-3xl text-blue-300 mb-2">{item.number}</h3>
-      <p className="text-gray-600 font-medium">{item.label}</p>
-    </div>
-  ))}
-</div>
+  {/* Subtle metallic noise overlay */}
+  <div className="absolute inset-0 opacity-10 bg-[url('/textures/noise.png')] pointer-events-none"></div>
+
+  <div className="container-custom relative">
+    <div className="grid md:grid-cols-2 gap-16 items-center">
+
+      {/* LEFT SIDE */}
+      <div className="space-y-6">
+        <h2 className="p-10 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+          Engineering Tomorrow’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">Solutions</span>
+        </h2>
+
+        <p className="p-10 text-gray-700 text-lg leading-relaxed max-w-lg">
+          Backed by decades of precision engineering, we deliver cutting-edge industrial solutions that enhance 
+          productivity, reliability, and sustainability across global markets.
+        </p>
+
+        {/* <div className="w-40 p-10 h-0 rounded-full bg-gradient-to-r from-blue-500 to-gray-700"></div> */}
+      </div>
+
+      {/* RIGHT SIDE - Stats */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          { number: "50+", label: "Years of Engineering" },
+          { number: "1000+", label: "Industrial Projects" },
+          { number: "20+", label: "Countries Served" },
+          { number: "500+", label: "Skilled Experts" },
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="p-8 rounded-2xl bg-white/70 backdrop-blur-md border border-gray-300
+                       shadow-[0_8px_25px_rgba(0,0,0,0.08)]
+                       hover:shadow-[0_12px_35px_rgba(0,0,0,0.12)]
+                       transition-all duration-500 hover:-translate-y-1"
+          >
+            <h3 className="text-4xl font-extrabold text-blue-600">{item.number}</h3>
+            <p className="mt-2 text-gray-700 font-medium text-sm tracking-wide uppercase">
+              {item.label}
+            </p>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Industries Section */}
 

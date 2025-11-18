@@ -31,7 +31,7 @@ export default function SlittingIndustrial() {
             Precision <span className="text-blue-400">Slitting</span> Services
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-blue-100 max-w-3xl mb-10">
-            High-quality slitting services for automotive and industrial clients — engineered for speed, precision, and repeatability.
+            High-quality slitting services for automotive and industrial clients engineered for speed, precision, and repeatability.
           </motion.p>
 
           <motion.a whileHover={{ scale: 1.05 }} href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg">
@@ -42,7 +42,9 @@ export default function SlittingIndustrial() {
 
       <section className="py-20 bg-gradient-to-b from-slate-50 to-gray-100">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">Core <span className="text-blue-400">Capabilities</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">  <span className="text-blue-400">Capabilities</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">Core Spare Slitter Head for Offline Setup Shimless Tooling and Vertical Scrap Winders 
+</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             {features.map((feature, idx) => (
               <motion.div key={idx} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }} className="group bg-white rounded-xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border border-gray-200">

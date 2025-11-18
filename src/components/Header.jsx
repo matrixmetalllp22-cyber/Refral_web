@@ -327,7 +327,7 @@ export default function Header() {
           <div className="flex justify-between items-center py-3 md:py-4">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-slate-600">
+              <span className="text-2xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-slate-600">
                 Matrix Metals
               </span>
             </Link>
@@ -338,7 +338,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-all duration-200 hover:underline underline-offset-4"
+                  className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-200 hover:underline underline-offset-4"
                 >
                   {item.name}
                 </Link>

@@ -137,9 +137,6 @@
 //   );
 // }
 
-
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -152,14 +149,12 @@ export default function ContactForm() {
     phone: "",
     message: "",
   });
+
   const [status, setStatus] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -168,19 +163,16 @@ export default function ContactForm() {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await axios.post("http://localhost:5000/api/contacts", formData);
-      if (response.data.success) {
-        setStatus({
-          type: "success",
-          message: "✅ Thank you! We’ll get back to you shortly.",
-        });
+      const res = await axios.post("http://localhost:5000/api/contacts", formData);
+      if (res.data.success) {
+        setStatus({ type: "success", message: "✔️ Thank you! We’ll reach out soon." });
         setFormData({ name: "", email: "", phone: "", message: "" });
       }
-    } catch (error) {
+    } catch (err) {
       setStatus({
         type: "error",
         message:
-          error.response?.data?.message || "⚠️ Something went wrong. Please try again.",
+          err.response?.data?.message || "⚠️ Something went wrong. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -190,19 +182,20 @@ export default function ContactForm() {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="space-y-6"
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 25 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
+      className="space-y-6"
     >
+      {/* Status Message */}
       {status.message && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className={`p-4 rounded-xl text-sm font-medium ${
+          className={`p-4 rounded-xl text-sm font-medium shadow-sm ${
             status.type === "success"
-              ? "bg-green-100 text-green-800 border border-green-200"
-              : "bg-rose-100 text-rose-800 border border-rose-200"
+              ? "bg-green-100 text-green-800 border border-green-300/60"
+              : "bg-rose-100 text-rose-800 border border-rose-300/60"
           }`}
         >
           {status.message}
@@ -218,7 +211,7 @@ export default function ContactForm() {
         <div key={field.id}>
           <label
             htmlFor={field.id}
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-semibold text-gray-700 mb-1"
           >
             {field.label}
           </label>
@@ -229,17 +222,19 @@ export default function ContactForm() {
             value={formData[field.id]}
             onChange={handleChange}
             required
-            className="w-full rounded-xl border border-gray-300 bg-gray-100/60 text-gray-800 
-            px-4 py-3 shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 
-            hover:bg-white/70 transition-all duration-300"
+            className="w-full rounded-2xl border border-gray-300 bg-white/50 
+            backdrop-blur-sm text-gray-900 px-4 py-3 
+            shadow-sm focus:ring-2 focus:ring-gray-400 focus:border-gray-500
+            hover:bg-white/80 transition-all duration-300"
           />
         </div>
       ))}
 
+      {/* Message */}
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-gray-700 mb-1"
+          className="block text-sm font-semibold text-gray-700 mb-1"
         >
           Message
         </label>
@@ -250,23 +245,35 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full rounded-xl border border-gray-300 bg-gray-100/60 text-gray-800 
-          px-4 py-3 shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 
-          hover:bg-white/70 transition-all duration-300"
+          className="w-full rounded-2xl border border-gray-300 bg-white/50 
+          backdrop-blur-sm text-gray-900 px-4 py-3 shadow-sm
+          focus:ring-2 focus:ring-gray-400 focus:border-gray-500
+          hover:bg-white/80 transition-all duration-300"
         ></textarea>
       </div>
 
+      {/* Submit Button — Metallic Gradient */}
       <motion.button
         type="submit"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         disabled={isSubmitting}
-        className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 font-semibold 
-        text-white bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 
-        hover:from-blue-400 hover:to-blue-600 shadow-md shadow-blue-300/40 
-        transition-all duration-300 ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""}`}
+        className={`w-full py-3 rounded-2xl flex items-center justify-center gap-3 
+        font-semibold text-gray-900 
+        bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 
+        hover:from-gray-300 hover:to-gray-500
+        shadow-lg shadow-gray-400/40 border border-gray-300
+        transition-all duration-300 ${
+          isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+        }`}
       >
-        {isSubmitting ? "Sending..." : <>Send Message <Send className="w-5 h-5" /></>}
+        {isSubmitting ? (
+          "Sending..."
+        ) : (
+          <>
+            Send Message <Send className="w-5 h-5" />
+          </>
+        )}
       </motion.button>
     </motion.form>
   );

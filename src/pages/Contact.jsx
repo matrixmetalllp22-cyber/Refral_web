@@ -115,42 +115,51 @@
 // }
 
 
-
-
 import React from "react";
 import ContactForm from "../components/ContactForm";
 import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden">
-      {/* Subtle Background Shine */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-blue-200/20 blur-3xl rounded-full animate-pulse"></div>
-      <div className="absolute bottom-10 right-20 w-80 h-80 bg-sky-300/20 blur-3xl rounded-full animate-pulse"></div>
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 overflow-hidden">
 
-      {/* Page Content */}
+      {/* Soft Glow Orbs */}
+      <div className="absolute top-32 left-10 w-96 h-96 bg-slate-400/20 blur-3xl rounded-full animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gray-400/20 blur-3xl rounded-full animate-pulse"></div>
+
+      {/* Page Wrapper */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="relative max-w-6xl mx-auto px-6 py-20"
       >
+        {/* Heading */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-700 via-blue-400 to-gray-800 bg-clip-text text-transparent drop-shadow-sm">
+          <h1 className="text-5xl md:text-6xl font-extrabold 
+            bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700 
+            bg-clip-text text-transparent tracking-tight drop-shadow-sm">
             Get in Touch
           </h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Have questions or need help? Let’s connect and create something great together.
+          <p className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+            Have questions or need assistance? We’re here to help you move forward.
           </p>
+
+          <div className="w-32 h-[3px] bg-gradient-to-r from-gray-500 to-gray-700 mx-auto mt-6 rounded-full shadow-sm"></div>
         </div>
 
-        {/* Contact Form Container */}
+        {/* Contact Form Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="backdrop-blur-lg bg-white/70 border border-gray-300/40 shadow-2xl 
-          rounded-2xl p-10 md:p-12 hover:shadow-gray-400/30 transition-all duration-500"
+          className="
+            bg-white/60 backdrop-blur-xl 
+            border border-gray-300/40 
+            shadow-[0_8px_40px_rgba(0,0,0,0.15)]
+            rounded-2xl p-10 md:p-12 
+            hover:shadow-[0_12px_50px_rgba(0,0,0,0.25)]
+            transition-all duration-500"
         >
           <ContactForm />
         </motion.div>
@@ -158,4 +167,3 @@ export default function Contact() {
     </div>
   );
 }
-

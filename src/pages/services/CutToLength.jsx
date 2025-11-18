@@ -5,16 +5,18 @@ import { Layers, Gauge, Cog, Zap } from "lucide-react";
 export default function CutToLengthIndustrial() {
   const features = [
     { icon: <Layers className="w-7 h-7 text-blue-400" />, title: "Accurate Length", desc: "Precision length cutting for construction materials." },
-    { icon: <Gauge className="w-7 h-7 text-blue-400" />, title: "High Capacity", desc: "Handles large volumes efficiently." },
-    { icon: <Cog className="w-7 h-7 text-blue-400" />, title: "Material Versatility", desc: "Works with various steel grades." },
-    { icon: <Zap className="w-7 h-7 text-blue-400" />, title: "Bulk Processing", desc: "Optimized for large-scale operations." }
+    { icon: <Gauge className="w-7 h-7 text-blue-400" />, title: "High Capacity", desc: "Matrix is Empowered With Large Production and Servicing Capabilities Pegged at 1,75,000 MT Per Annum." },
+    { icon: <Cog className="w-7 h-7 text-blue-400" />, title: "Material Versatility", desc: "Works with various steel grades & MI." },
+    { icon: <Zap className="w-7 h-7 text-blue-400" />, title: "Bulk Processing", desc: "Operations at Matrix are Enabled by Advanced Technology for  Production Lines Coupled with High Level of Skills and Management." }
+    // { icon: <Zap className="w-7 h-7 text-blue-400" />, title: "Bulk Processing", desc: "Operations at Matrix are Enabled by Advanced Technology for  Production Lines Coupled with High Level of Skills and Management." }
   ];
 
   const specs = [
     { label: "Max Strip Length", value: "12000 mm" },
-    { label: "Coil Width Range", value: "600 - 2000 mm" },
-    { label: "Thickness Range", value: "1.0 - 6.0 mm" },
-    { label: "Length Accuracy", value: "±1.0 mm" }
+    { label: "Only Line in South India for Larger Production ", value: "2000 mm Width " },
+    { label: "Thickness Range", value: "< 1.0 mm / 2000 mm" },
+    { label: "Length Accuracy", value: "< 0.5 mm / 2000 mm" },
+    // { label: "Length Accuracy", value: "< 0.5 mm / 2000 mm" }
   ];
 
   return (
@@ -27,10 +29,10 @@ export default function CutToLengthIndustrial() {
 
         <div className="relative container mx-auto px-6 py-28 md:py-40 text-white">
           <motion.h1 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-            Cut-to-Length <span className="text-blue-400">Services</span>
+            CTL – 2000 MM WIDTH X 6 MTR LENGTH With Diagonal Radius and Angular Tolerance  of  +/- 1 mm for Flatness with Auto Stacking.
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-blue-100 max-w-3xl mb-10">
-            Durable, precise length cutting tailored for construction and infrastructure projects — designed for scale and repeatable accuracy.
+            Durable, precise length cutting tailored for construction and infrastructure projects designed for scale and repeatable accuracy.
           </motion.p>
 
           <motion.a whileHover={{ scale: 1.05 }} href="/contact" className="inline-block bg-blue-400 hover:bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold shadow-lg">
