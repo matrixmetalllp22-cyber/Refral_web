@@ -110,17 +110,17 @@ const KeyProducts = () => {
     {
       title: "HR (Hot Rolled) Black",
       description: "Available in coils, sheets, and plates with industrial-grade quality.",
-      image: "/images/prague.jpg",
+      image: "/Images/prague.jpg",
     },
     {
       title: "CR (Cold Rolled) Steel",
       description: "Used where high strength, precision thickness, and fine finishing matter.",
-      image: "/images/firenze-9292729_1280.jpg",
+      image: "/Images/button-4927935_1920.jpg",
     },
     {
       title: "Galvanized Steel",
       description: "Superior corrosion-resistant steel for automotive and construction sectors.",
-      image: "/images/architecture-2182003_1920.jpg",
+      image: "/Images/architecture-2182003_1920.jpg",
     },
   ];
 

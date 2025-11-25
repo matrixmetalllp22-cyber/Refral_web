@@ -128,7 +128,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/careers" element={<Careers />} />
-            {/* <Route path="/news" element={<News />} /> */}
+            <Route path="/news" element={<News />} />
             <Route path="/contact" element={<Contact />} />
 
             {/* Service Routes */}

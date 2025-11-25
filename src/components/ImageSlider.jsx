@@ -7,7 +7,7 @@ const ImageSlider = () => {
   
 
     "/Images/architecture-2182003_1920.jpg",
-    "/Images/bridge-2182003_1920.jpg",
+    "/Images/prague.jpg",
     "/Images/firenze-9292729_1280.jpg",
 
   ];

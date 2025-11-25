@@ -412,37 +412,87 @@ import { motion } from "framer-motion";
 const IndustriesSection = () => {
   const navigate = useNavigate();
 
-  const industries = [
-    {
-      id: "slitting",
-      name: "Slitting",
-      image: "/public/images/Metal-Slitter-Machine-Line-2-700x394.webp",
-      description:
-        "High-precision steel slitting engineered for consistency and industrial performance.",
-    },
-    {
-      id: "cut-to-length",
-      name: "Cut-to-Length",
-      image: "/public/images/Coil-Cut-to-Lengt.webp",
-      description:
-        "Accurate CTL operations with optimized flatness for manufacturing and heavy fabrication.",
-    },
-    {
-      id: "packing",
-      name: "Packing",
-      image: "/public/images/aluminium-sector.jpg",
-      description:
-        "Industrial-grade packing ensuring safe, stable, and protected coil transport.",
-    },
-    {
-      id: "blanking",
-      name: "Blanking",
-      image: "/public/images/maxresdefault.jpg",
-      description:
-        "Highly accurate blanking operation ideal for automotive and precision engineering.",
-    },
-  ];
+  // const industries = [
+  //   {
+  //     id: "slitting",
+  //     name: "Slitting",
+  //     image: "/public/images/Metal-Slitter-Machine-Line-2-700x394.webp",
+  //     description:
+  //       "High-precision steel slitting engineered for consistency and industrial performance.",
+  //   },
+  //   {
+  //     id: "cut-to-length",
+  //     name: "Cut-to-Length",
+  //     image: "/public/images/Coil-Cut-to-Lengt.jpg",
+  //     description:
+  //       "Accurate CTL operations with optimized flatness for manufacturing and heavy fabrication.",
+  //   },
+  //   {
+  //     id: "packing",
+  //     name: "Packing",
+  //     image: "/public/images/aluminium-sector.jpg",
+  //     description:
+  //       "Industrial-grade packing ensuring safe, stable, and protected coil transport.",
+  //   },
+  //   {
+  //     id: "blanking",
+  //     name: "Blanking",
+  //     image: "/public/images/maxresdefault.jpg",
+  //     description:
+  //       "Highly accurate blanking operation ideal for automotive and precision engineering.",
+  //   },
+  // ];
 
+
+
+
+
+
+
+
+
+const industries = [
+  {
+    id: "slitting",
+    name: "Slitting",
+    image: "/Images/Metal-Slitter-Machine-Line-2-700x394.webp",
+    description:
+      "High-precision steel slitting engineered for consistency and industrial performance.",
+  },
+  {
+    id: "cut-to-length",
+    name: "Cut-to-Length",
+    image: "/Images/Coil-Cut-to-Lengt.jpg",
+    description:
+      "Accurate CTL operations with optimized flatness for manufacturing and heavy fabrication.",
+  },
+  {
+    id: "packing",
+    name: "Packing",
+    image: "/Images/aluminium-sector.jpg",
+    description:
+      "Industrial-grade packing ensuring safe, stable, and protected coil transport.",
+  },
+  {
+    id: "blanking",
+    name: "Blanking",
+    image: "/Images/maxresdefault.jpg",
+    description:
+      "Highly accurate blanking operation ideal for automotive and precision engineering.",
+  },
+];
+
+
+
+
+
+
+
+
+
+
+
+  
   const handleServiceClick = (serviceId) => {
     navigate(`/services/${serviceId}`);
   };
