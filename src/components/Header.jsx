@@ -272,6 +272,8 @@ export default function Header() {
     { name: "Quality", href: "/industries" },
     { name: "News & Media", href: "/news" },
     { name: "Contact", href: "/contact" },
+    { name: "Applications", href: "/applications" },
+    { name: "Case Studies", href: "/case-studies" },
   ];
 
   return (

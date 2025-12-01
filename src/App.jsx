@@ -73,6 +73,8 @@ import Industries from "./pages/Industries";
 import Careers from "./pages/Careers";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
+import Applications from "./pages/Applications";
+import CaseStudies from "./pages/CaseStudies";
 
 // Service Pages
 import Slitting from "./pages/services/Slitting";
@@ -130,6 +132,8 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/news" element={<News />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/applications" element={<Applications />} />
+            <Route path="/case-studies" element={<CaseStudies  />} />
 
             {/* Service Routes */}
             <Route path="/services/slitting" element={<Slitting />} />

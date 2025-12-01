@@ -28,6 +28,12 @@ export default function Navbar() {
             <Link to="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
+            <Link to="/applications" className="text-gray-600 hover:text-gray-900">
+              Applications
+            </Link>
+            <Link to="/case-studies" className="text-gray-600 hover:text-gray-900">
+              Case Studies
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -104,6 +110,13 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Contact
+            </Link>
+            <Link
+              to="/case-studies"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              onClick={() => setIsOpen(false)}
+            >
+              Case Studies
             </Link>
           </div>
         </div>

@@ -646,11 +646,159 @@
 
 
 
+// import React, { useState } from "react";
+// import { motion } from "framer-motion";
+// import toast, { Toaster } from "react-hot-toast";
+
+// // Reusable Input Component
+// const InputField = ({ label, name, type = "text", value, onChange }) => (
+//   <div className="relative w-full">
+//     <input
+//       type={type}
+//       name={name}
+//       value={value}
+//       onChange={onChange}
+//       required
+//       className="peer w-full p-4 pt-6 rounded-xl bg-white shadow-md border border-gray-200 text-gray-700 outline-none focus:ring-2 focus:ring-yellow-400 transition"
+//     />
+//     <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-yellow-500">
+//       {label}
+//     </label>
+//   </div>
+// );
+
+// // Reusable Textarea Component
+// const TextArea = ({ label, name, value, onChange }) => (
+//   <div className="relative w-full">
+//     <textarea
+//       name={name}
+//       value={value}
+//       onChange={onChange}
+//       rows={4}
+//       required
+//       className="peer w-full p-4 pt-6 rounded-xl bg-white shadow-md border border-gray-200 text-gray-700 outline-none focus:ring-2 focus:ring-yellow-400 transition resize-none"
+//     />
+//     <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-yellow-500">
+//       {label}
+//     </label>
+//   </div>
+// );
+
+// export default function ContactForm() {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     phone: "",
+//     message: "",
+//   });
+//   const [loading, setLoading] = useState(false);
+
+//   const handleChange = (e) =>
+//     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+//   const validateForm = () => {
+//     if (formData.name.length < 3) {
+//       toast.error("Name must be at least 3 characters");
+//       return false;
+//     }
+//     if (!formData.email.includes("@")) {
+//       toast.error("Enter a valid email");
+//       return false;
+//     }
+//     if (formData.phone.length < 10) {
+//       toast.error("Phone number must be at least 10 digits");
+//       return false;
+//     }
+//     if (formData.message.length < 5) {
+//       toast.error("Message must be at least 5 characters");
+//       return false;
+//     }
+//     return true;
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     if (loading) return;
+//     if (!validateForm()) return;
+
+//     setLoading(true);
+
+//     try {
+//       await fetch(
+//         "https://script.google.com/macros/s/AKfycbx4igNIL8RPzwel3naVQpqak7zjn_FvmMMVTWiWDRjmK-Imn3nUJblk02q8hCpm_dTM/exec",
+//         {
+//           method: "POST",
+//           mode: "no-cors",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify(formData),
+//         }
+//       );
+//       toast.success("Message sent successfully!");
+//       setFormData({ name: "", email: "", phone: "", message: "" });
+//     } catch (error) {
+//       console.error(error);
+//       toast.error("Something went wrong!");
+//     }
+
+//     setLoading(false);
+//   };
+
+//   return (
+//     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+//       <Toaster position="top-center" />
+//       <motion.form
+//         onSubmit={handleSubmit}
+//         className="w-full max-w-lg p-8 bg-white rounded-3xl shadow-xl flex flex-col gap-6"
+//         initial={{ opacity: 0, y: 50 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.6, ease: "easeOut" }}
+//       >
+//         <motion.h2
+//           className="text-3xl font-bold text-gray-800 text-center"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ delay: 0.2 }}
+//         >
+//           Contact Us
+//         </motion.h2>
+
+//         <InputField label="Your Name" name="name" value={formData.name} onChange={handleChange} />
+//         <InputField label="Your Email" name="email" type="email" value={formData.email} onChange={handleChange} />
+//         <InputField label="Your Phone" name="phone" value={formData.phone} onChange={handleChange} />
+//         <TextArea label="Your Message" name="message" value={formData.message} onChange={handleChange} />
+
+//         <motion.button
+//           type="submit"
+//           disabled={loading}
+//           className="py-3 rounded-xl bg-yellow-400 text-white font-semibold text-lg hover:scale-105 transition flex justify-center items-center gap-3 disabled:opacity-50 shadow-md"
+//           whileHover={{ scale: 1.05 }}
+//           whileTap={{ scale: 0.95 }}
+//         >
+//           {loading ? (
+//             <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+//           ) : (
+//             "Send Message"
+//           )}
+//         </motion.button>
+//       </motion.form>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
+import { MdLocationPin, MdPhone } from "react-icons/md";
 
-// Reusable Input Component
+// ------------ Reusable Input Component ------------
 const InputField = ({ label, name, type = "text", value, onChange }) => (
   <div className="relative w-full">
     <input
@@ -661,13 +809,13 @@ const InputField = ({ label, name, type = "text", value, onChange }) => (
       required
       className="peer w-full p-4 pt-6 rounded-xl bg-white shadow-md border border-gray-200 text-gray-700 outline-none focus:ring-2 focus:ring-yellow-400 transition"
     />
-    <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-yellow-500">
+    <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-focus:text-yellow-500">
       {label}
     </label>
   </div>
 );
 
-// Reusable Textarea Component
+// ------------ Textarea Component ------------
 const TextArea = ({ label, name, value, onChange }) => (
   <div className="relative w-full">
     <textarea
@@ -678,7 +826,7 @@ const TextArea = ({ label, name, value, onChange }) => (
       required
       className="peer w-full p-4 pt-6 rounded-xl bg-white shadow-md border border-gray-200 text-gray-700 outline-none focus:ring-2 focus:ring-yellow-400 transition resize-none"
     />
-    <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-1 peer-focus:text-sm peer-focus:text-yellow-500">
+    <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-focus:text-yellow-500">
       {label}
     </label>
   </div>
@@ -694,33 +842,21 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) =>
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  // ------------ Validation ------------
   const validateForm = () => {
-    if (formData.name.length < 3) {
-      toast.error("Name must be at least 3 characters");
-      return false;
-    }
-    if (!formData.email.includes("@")) {
-      toast.error("Enter a valid email");
-      return false;
-    }
-    if (formData.phone.length < 10) {
-      toast.error("Phone number must be at least 10 digits");
-      return false;
-    }
-    if (formData.message.length < 5) {
-      toast.error("Message must be at least 5 characters");
-      return false;
-    }
+    if (formData.name.length < 3) return toast.error("Name must be at least 3 characters");
+    if (!formData.email.includes("@")) return toast.error("Enter a valid email");
+    if (formData.phone.length < 10) return toast.error("Phone must be at least 10 digits");
+    if (formData.message.length < 5) return toast.error("Message too short");
     return true;
   };
 
+  // ------------ Submit Form ------------
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (loading) return;
     if (!validateForm()) return;
-
     setLoading(true);
 
     try {
@@ -733,10 +869,10 @@ export default function ContactForm() {
           body: JSON.stringify(formData),
         }
       );
+
       toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error(error);
+    } catch {
       toast.error("Something went wrong!");
     }
 
@@ -744,23 +880,18 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 px-6 py-10 flex flex-col items-center">
       <Toaster position="top-center" />
+
+      {/* ---------- FORM ---------- */}
       <motion.form
         onSubmit={handleSubmit}
         className="w-full max-w-lg p-8 bg-white rounded-3xl shadow-xl flex flex-col gap-6"
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6 }}
       >
-        <motion.h2
-          className="text-3xl font-bold text-gray-800 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          Contact Us
-        </motion.h2>
+        <h2 className="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
 
         <InputField label="Your Name" name="name" value={formData.name} onChange={handleChange} />
         <InputField label="Your Email" name="email" type="email" value={formData.email} onChange={handleChange} />
@@ -770,17 +901,101 @@ export default function ContactForm() {
         <motion.button
           type="submit"
           disabled={loading}
-          className="py-3 rounded-xl bg-yellow-400 text-white font-semibold text-lg hover:scale-105 transition flex justify-center items-center gap-3 disabled:opacity-50 shadow-md"
-          whileHover={{ scale: 1.05 }}
+          className="py-3 rounded-xl bg-yellow-400 text-white font-semibold text-lg hover:scale-105 transition disabled:opacity-50 shadow-md"
           whileTap={{ scale: 0.95 }}
         >
-          {loading ? (
-            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-          ) : (
-            "Send Message"
-          )}
+          {loading ? "Sending..." : "Send Message"}
         </motion.button>
       </motion.form>
+
+      {/* ---------- LOCATION SECTION ---------- */}
+      <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 0.8 }}
+  className="w-full max-w-4xl mt-16 grid grid-cols-1 md:grid-cols-2 gap-10"
+>
+  {/* Map - Scroll reveal */}
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
+    whileHover={{ scale: 1.03 }}
+    className="rounded-2xl overflow-hidden border border-gray-200 shadow-xl backdrop-blur-lg hover:shadow-2xl"
+  >
+    <iframe
+      className="w-full h-64"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.462445360588!2d77.52000387457595!3d13.023073087297223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3db890cace25%3A0x2caf2640275a9133!2sMATRIX%20METALS%20LLP!5e0!3m2!1sen!2sin!4v1732617180552!5m2!1sen!2sin"
+      loading="lazy"
+      allowFullScreen=""
+    ></iframe>
+  </motion.div>
+
+  {/* Details Section */}
+  <div className="flex flex-col gap-10">
+
+    {/* Location Block with Pulse Icon */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.4, duration: 0.6 }}
+      whileHover={{ scale: 1.02 }}
+      className="p-5 rounded-2xl bg-white/50 border border-gray-200 shadow-md backdrop-blur-md hover:shadow-lg cursor-pointer transition-all"
+    >
+      <div className="flex items-center gap-3">
+        
+        {/* PULSE ANIMATION */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 1.8,
+            ease: "easeInOut",
+          }}
+          className="text-yellow-600"
+        >
+          <MdLocationPin className="text-3xl" />
+        </motion.div>
+
+        <h3 className="text-xl font-semibold text-gray-700">Location</h3>
+      </div>
+
+      <p className="text-gray-600 leading-relaxed mt-3">
+        MATRIX METALS LLP<br />
+        Bengaluru, Karnataka, India.
+      </p>
+    </motion.div>
+
+    {/* Phone Block */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.6, duration: 0.6 }}
+      whileHover={{ scale: 1.02 }}
+      className="p-5 rounded-2xl bg-white/50 border border-gray-200 shadow-md backdrop-blur-md hover:shadow-lg cursor-pointer transition-all"
+    >
+      <div className="flex items-center gap-3">
+        <MdPhone className="text-yellow-600 text-3xl" />
+        <h3 className="text-xl font-semibold text-gray-700">Phone</h3>
+      </div>
+
+      <a
+        href="tel:+91951440912"
+        className="block text-gray-700 text-lg font-medium mt-3 hover:text-yellow-600"
+      >
+        +91 95144 40912
+      </a>
+    </motion.div>
+
+  </div>
+</motion.div>
+
     </div>
   );
 }
