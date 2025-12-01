@@ -257,15 +257,15 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const leadership = [
-  { name: "Mr. Miki Yusuke", role: "Chairman", image: "/images/miki-yusuke.jpg" },
-  { name: "Mr. Rakesh Chauhan", role: "Joint Managing Director", image: "/images/rakesh-chauhan.jpg" },
+  { name: "Mr. Miki Yusuke", role: "Chairman", image: "/Images/miki-yusuke.jpg" },
+  { name: "Mr. Rakesh Chauhan", role: "Joint Managing Director", image: "/Images/rakesh-chauhan.jpg" },
 ];
 
 const team = [
-  { name: "Mr. Example A", role: "Head - Operations", image: "/images/person1.jpg" },
-  { name: "Ms. Example B", role: "Head - Quality", image: "/images/person2.jpg" },
-  { name: "Mr. Example C", role: "Head - Logistics", image: "/images/person3.jpg" },
-  { name: "Ms. Example D", role: "Head - HR", image: "/images/person4.jpg" },
+  { name: "Mr. Example A", role: "Head - Operations", image: "/Images/person1.jpg" },
+  { name: "Ms. Example B", role: "Head - Quality", image: "/Images/person2.jpg" },
+  { name: "Mr. Example C", role: "Head - Logistics", image: "/Images/person3.jpg" },
+  { name: "Ms. Example D", role: "Head - HR", image: "/Images/person4.jpg" },
 ];
 
 export default function ManagementTeam() {

@@ -269,8 +269,8 @@
 
 
 
-
 import React, { useState } from "react";
+import Masonry from "react-masonry-css";
 import { motion, AnimatePresence } from "framer-motion";
 
 const certificates = [
@@ -283,8 +283,15 @@ const certificates = [
   { id: 7, image: "/Images/bridge-5624104_1920.jpg" },
   { id: 8, image: "/Images/button-4927935_1920.jpg" },
   { id: 9, image: "/Images/firenze-9292729_1280.jpg" },
-  { id: 10, image:"/Images/prague.jpg" },
+  { id: 10, image: "/Images/prague.jpg" },
 ];
+
+const breakpointColumns = {
+  default: 4,
+  1200: 3,
+  768: 2,
+  480: 1,
+};
 
 export default function QualitySection() {
   const [selectedCert, setSelectedCert] = useState(null);
@@ -293,13 +300,13 @@ export default function QualitySection() {
     <section className="bg-gradient-to-b from-[#fafafa] via-[#f4f4f5] to-[#ededed] text-gray-900">
 
       {/* ===== QUALITY STATEMENT ===== */}
-      <div className="max-w-6xl mx-auto px-6 py-20">
-        
+      <div className="max-w-7xl mx-auto px-6 py-20">
+
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center text-gray-700 tracking-tight"
+          className="text-4xl md:text-5xl font-bold text-center text-gray-700"
         >
           Quality Statement
         </motion.h2>
@@ -326,13 +333,13 @@ export default function QualitySection() {
           We Are Committed To
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700 leading-relaxed">
-          <ul className="space-y-3 list-disc list-inside text-[16px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 text-gray-700 leading-relaxed text-[16px] max-w-4xl mx-auto">
+          <ul className="space-y-3 list-disc list-inside">
             <li>Meeting mutually agreed customer & stakeholder requirements.</li>
             <li>Following best work ethics and industry practices globally.</li>
             <li>Mitigating risks with strong evaluation & corrective actions.</li>
           </ul>
-          <ul className="space-y-3 list-disc list-inside text-[16px]">
+          <ul className="space-y-3 list-disc list-inside">
             <li>Building quality mindset across the JSW MI value chain.</li>
             <li>Continuously improving the Quality Management System.</li>
             <li>Contributing positively to environment & society.</li>
@@ -340,10 +347,10 @@ export default function QualitySection() {
         </div>
       </div>
 
-      {/* ===== QUALITY CERTIFICATES ===== */}
-      <div className="relative py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          
+      {/* ===== QUALITY CERTIFICATES WITH MASONRY GRID ===== */}
+      <div className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+
           <h2 className="text-3xl font-bold text-gray-700 mb-4 tracking-tight">
             Quality Certificates
           </h2>
@@ -353,33 +360,25 @@ export default function QualitySection() {
             ISO 14001:2015 & ISO 45001:2018.
           </p>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-            {certificates.map((cert, idx) => (
+          <Masonry
+            breakpointCols={breakpointColumns}
+            className="flex gap-4"
+            columnClassName="masonry-col"
+          >
+            {certificates.map((cert, i) => (
               <motion.div
                 key={cert.id}
-                initial={{ opacity: 0, y: 25 }}
+                className="cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 mb-4"
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                whileHover={{ y: -4 }}
+                transition={{ delay: i * 0.05, duration: 0.5 }}
+                whileHover={{ scale: 1.03 }}
                 onClick={() => setSelectedCert(cert.image)}
-                className="cursor-pointer"
               >
-                <div className="
-                  rounded-xl overflow-hidden border border-gray-200
-                  bg-white/80 backdrop-blur-sm
-                  shadow-sm hover:shadow-lg hover:border-gray-400
-                  transition-all duration-300
-                ">
-                  <img
-                    src={cert.image}
-                    alt="Certificate"
-                    className="w-full h-40 object-contain p-3"
-                  />
-                </div>
+                <img src={cert.image} alt="certificate" className="w-full object-cover" />
               </motion.div>
             ))}
-          </div>
+          </Masonry>
         </div>
 
         {/* ===== POPUP MODAL ===== */}
@@ -389,15 +388,15 @@ export default function QualitySection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[999] flex items-center justify-center p-6 cursor-pointer"
               onClick={() => setSelectedCert(null)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[999]"
             >
               <motion.img
-                initial={{ scale: 0.85, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.85, opacity: 0 }}
                 src={selectedCert}
-                className="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl border border-gray-300 bg-white"
+                className="rounded-xl max-w-[90vw] max-h-[90vh] border shadow-2xl bg-white"
+                initial={{ scale: 0.85 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.85 }}
               />
             </motion.div>
           )}
