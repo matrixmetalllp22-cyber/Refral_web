@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 dark:from-slate-900 dark:via-slate-800 dark:to-gray-900 overflow-hidden transition-colors duration-300">
 
       {/* Soft Glow Orbs */}
       <div className="absolute top-20 left-5 w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 

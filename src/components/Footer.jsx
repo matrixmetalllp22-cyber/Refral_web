@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-slate-900 dark:bg-gray-950 text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-orange-200">Matrix Metals LLP</h3>
-            <p className="text-slate-300">
+            <h3 className="text-xl font-bold mb-4 text-orange-300 dark:text-orange-400">Matrix Metals LLP</h3>
+            <p className="text-slate-300 dark:text-gray-400">
               Creating value through innovative steel processing and sustainable practices.
             </p>
           </div>
@@ -19,22 +19,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-slate-300 hover:text-white">
+                <Link to="/" className="text-slate-300 dark:text-gray-400 hover:text-white dark:hover:text-orange-400 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-slate-300 hover:text-white">
+                <Link to="/about" className="text-slate-300 dark:text-gray-400 hover:text-white dark:hover:text-orange-400 transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="text-slate-300 hover:text-white">
+                <Link to="/industries" className="text-slate-300 dark:text-gray-400 hover:text-white dark:hover:text-orange-400 transition-colors">
                   Industries
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-slate-300 hover:text-white">
+                <Link to="/contact" className="text-slate-300 dark:text-gray-400 hover:text-white dark:hover:text-orange-400 transition-colors">
                   Contact
                 </Link>
               </li>
@@ -44,7 +44,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-slate-300">
+            <ul className="space-y-2 text-slate-300 dark:text-gray-400">
               <li className="flex items-start">
                 <svg
                   className="h-6 w-6 mr-2 text-gray-400"

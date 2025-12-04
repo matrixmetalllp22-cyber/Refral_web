@@ -13,9 +13,9 @@ const InputField = ({ label, name, type = "text", value, onChange }) => (
       value={value}
       onChange={onChange}
       required
-      className="peer w-full p-4 pt-6 rounded-xl bg-white shadow-md border border-gray-200 text-gray-700 outline-none focus:ring-2 focus:ring-orange-500 transition"
+      className="peer w-full p-4 pt-6 rounded-xl bg-white dark:bg-slate-800 shadow-md border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-100 outline-none focus:ring-2 focus:ring-orange-500 transition"
     />
-    <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-focus:text-orange-600">
+    <label className="absolute left-4 top-4 text-gray-400 dark:text-gray-500 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-focus:text-orange-600 dark:peer-focus:text-orange-400">
       {label}
     </label>
   </div>
@@ -30,9 +30,9 @@ const TextArea = ({ label, name, value, onChange }) => (
       onChange={onChange}
       rows={4}
       required
-      className="peer w-full p-4 pt-6 rounded-xl bg-white shadow-md border border-gray-200 text-gray-700 outline-none focus:ring-2 focus:ring-orange-500 transition resize-none"
+      className="peer w-full p-4 pt-6 rounded-xl bg-white dark:bg-slate-800 shadow-md border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-100 outline-none focus:ring-2 focus:ring-orange-500 transition resize-none"
     />
-    <label className="absolute left-4 top-4 text-gray-400 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-focus:text-orange-600">
+    <label className="absolute left-4 top-4 text-gray-400 dark:text-gray-500 text-sm transition-all peer-focus:top-1 peer-focus:text-sm peer-focus:text-orange-600 dark:peer-focus:text-orange-400">
       {label}
     </label>
   </div>
@@ -92,12 +92,12 @@ export default function ContactForm() {
       {/* ---------- FORM ---------- */}
       <motion.form
         onSubmit={handleSubmit}
-        className="w-full max-w-lg p-8 bg-white rounded-3xl shadow-xl flex flex-col gap-6"
+        className="w-full max-w-lg p-8 bg-white dark:bg-slate-800 rounded-3xl shadow-xl flex flex-col gap-6 transition-colors duration-300"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-bold text-gray-800 text-center">Contact Us</h2>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 text-center">Contact Us</h2>
 
         <InputField label="Your Name" name="name" value={formData.name} onChange={handleChange} />
         <InputField label="Your Email" name="email" type="email" value={formData.email} onChange={handleChange} />
@@ -107,7 +107,7 @@ export default function ContactForm() {
         <motion.button
           type="submit"
           disabled={loading}
-          className="py-3 rounded-xl bg-orange-600 text-white font-semibold text-lg hover:bg-orange-700 active:scale-95 transition disabled:opacity-50 shadow-md"
+          className="py-3 rounded-xl bg-orange-600 dark:bg-orange-700 text-white font-semibold text-lg hover:bg-orange-700 dark:hover:bg-orange-600 active:scale-95 transition disabled:opacity-50 shadow-md"
           whileTap={{ scale: 0.95 }}
         >
           {loading ? "Sending..." : "Send Message"}
@@ -129,7 +129,7 @@ export default function ContactForm() {
     viewport={{ once: true }}
     transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
     whileHover={{ scale: 1.03 }}
-    className="rounded-2xl overflow-hidden border border-gray-200 shadow-xl backdrop-blur-lg hover:shadow-2xl"
+    className="rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 shadow-xl backdrop-blur-lg hover:shadow-2xl transition-shadow duration-300"
   >
     <iframe
       className="w-full h-64"
@@ -149,7 +149,7 @@ export default function ContactForm() {
       viewport={{ once: true }}
       transition={{ delay: 0.4, duration: 0.6 }}
       whileHover={{ scale: 1.02 }}
-      className="p-5 rounded-2xl bg-white/50 border border-gray-200 shadow-md backdrop-blur-md hover:shadow-lg cursor-pointer transition-all"
+      className="p-5 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 shadow-md backdrop-blur-md hover:shadow-lg cursor-pointer transition-all"
     >
       <div className="flex items-center gap-3">
         
@@ -168,10 +168,10 @@ export default function ContactForm() {
           <MdLocationPin className="text-3xl" />
         </motion.div>
 
-        <h3 className="text-xl font-semibold text-gray-700">Location</h3>
+        <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-100">Location</h3>
       </div>
 
-      <p className="text-gray-600 leading-relaxed mt-3">
+      <p className="text-gray-600 dark:text-gray-400 leading-relaxed mt-3">
         MATRIX METALS LLP<br />
         Bengaluru, Karnataka, India.
       </p>
@@ -184,11 +184,11 @@ export default function ContactForm() {
       viewport={{ once: true }}
       transition={{ delay: 0.6, duration: 0.6 }}
       whileHover={{ scale: 1.02 }}
-      className="p-5 rounded-2xl bg-white/50 border border-gray-200 shadow-md backdrop-blur-md hover:shadow-lg cursor-pointer transition-all"
+      className="p-5 rounded-2xl bg-white/50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 shadow-md backdrop-blur-md hover:shadow-lg cursor-pointer transition-all"
     >
       <div className="flex items-center gap-3">
         <MdPhone className="text-orange-600 text-3xl" />
-        <h3 className="text-xl font-semibold text-gray-700">Phone</h3>
+        <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-100">Phone</h3>
       </div>
 
       <a
