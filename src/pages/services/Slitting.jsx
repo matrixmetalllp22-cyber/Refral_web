@@ -5,10 +5,10 @@ import CountUp from "react-countup";
 
 export default function SlittingIndustrial() {
   const features = [
-    { icon: <Layers className="w-7 h-7 text-blue-400" />, title: "Precision Cutting", desc: "Advanced precision technology for exact measurements." },
-    { icon: <Gauge className="w-7 h-7 text-blue-400" />, title: "High Speed", desc: "Fast processing without compromising quality." },
-    { icon: <Cog className="w-7 h-7 text-blue-400" />, title: "Quality Control", desc: "Rigorous testing at every stage." },
-    { icon: <Zap className="w-7 h-7 text-blue-400" />, title: "Customization", desc: "Tailored solutions for specific needs." }
+    { icon: <Layers className="w-7 h-7 text-orange-400" />, title: "Precision Cutting", desc: "Advanced precision technology for exact measurements." },
+    { icon: <Gauge className="w-7 h-7 text-orange-400" />, title: "High Speed", desc: "Fast processing without compromising quality." },
+    { icon: <Cog className="w-7 h-7 text-orange-400" />, title: "Quality Control", desc: "Rigorous testing at every stage." },
+    { icon: <Zap className="w-7 h-7 text-orange-400" />, title: "Customization", desc: "Tailored solutions for specific needs." }
   ];
 
   const specs = [
@@ -28,13 +28,13 @@ export default function SlittingIndustrial() {
 
         <div className="relative container mx-auto px-6 py-28 md:py-40 text-white">
           <motion.h1 initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight">
-            Precision <span className="text-blue-400">Slitting</span> Services
+            Precision <span className="text-orange-400">Slitting</span> Services
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-blue-100 max-w-3xl mb-10">
+          <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-orange-100 max-w-3xl mb-10">
             High-quality slitting services for automotive and industrial clients engineered for speed, precision, and repeatability.
           </motion.p>
 
-          <motion.a whileHover={{ scale: 1.05 }} href="/contact" className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg">
+          <motion.a whileHover={{ scale: 1.05 }} href="/contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg">
             Request a Quote
           </motion.a>
         </div>
@@ -42,7 +42,7 @@ export default function SlittingIndustrial() {
 
       <section className="py-20 bg-gradient-to-b from-slate-50 to-gray-100">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">  <span className="text-blue-400">Capabilities</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">  <span className="text-orange-400">Capabilities</span></h2>
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">Core Spare Slitter Head for Offline Setup Shimless Tooling and Vertical Scrap Winders 
 </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -59,11 +59,11 @@ export default function SlittingIndustrial() {
 
       <section className="py-24 bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 text-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Technical <span className="text-blue-400">Specifications</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Technical <span className="text-orange-400">Specifications</span></h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             {specs.map((s, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition">
-                <p className="text-2xl md:text-3xl font-semibold text-blue-300">{s.value}</p>
+                <p className="text-2xl md:text-3xl font-semibold text-orange-300">{s.value}</p>
                 <p className="text-gray-300 text-sm mt-2 uppercase tracking-wide">{s.label}</p>
               </motion.div>
             ))}
@@ -71,12 +71,12 @@ export default function SlittingIndustrial() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-r from-blue-600 via-slate-700 to-gray-900 text-white text-center">
+      <section className="py-24 bg-gradient-to-r from-orange-600 via-slate-700 to-gray-900 text-white text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-blue-200 mb-10 max-w-2xl mx-auto">Contact our sales team to discuss your slitting requirements and find the right solution for your production line.</p>
+          <p className="text-orange-200 mb-10 max-w-2xl mx-auto">Contact our sales team to discuss your slitting requirements and find the right solution for your production line.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="/contact" className="bg-white text-blue-400 px-8 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform">Contact Us</a>
+            <a href="/contact" className="bg-white text-orange-400 px-8 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform">Contact Us</a>
             <a href="/" className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition">Back Home</a>
           </div>
         </div>

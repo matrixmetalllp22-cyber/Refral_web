@@ -112,7 +112,7 @@ const industries = [
                   onClick={() => handleServiceClick(industry.id)}
                   whileHover={{ scale: 1.08 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-600 to-blue-800 
+                  className="bg-gradient-to-r from-orange-600 to-orange-800 
                              text-white px-6 py-3 rounded-xl text-sm font-medium
                              shadow-lg hover:shadow-2xl transition-all duration-300"
                 >

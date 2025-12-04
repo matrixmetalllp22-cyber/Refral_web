@@ -5,10 +5,10 @@ import { Layers, Gauge, Truck, Package } from "lucide-react";
 
 export default function PackingIndustrial() {
   const features = [
-    { icon: <Layers className="w-7 h-7 text-blue-400" />, title: "Energy Sector Support", desc: "Specialized handling and packing workflows for renewable components." },
-    { icon: <Gauge className="w-7 h-7 text-blue-400" />, title: "Oil & Gas Solutions", desc: "Robust protection and materials for energy infrastructure shipments." },
-    { icon: <Package className="w-7 h-7 text-blue-400" />, title: "Secure Packaging", desc: "Multi-layer protective systems to prevent transit damage." },
-    { icon: <Truck className="w-7 h-7 text-blue-400" />, title: "Safe Transport", desc: "Certified logistics partners and handling procedures ensure integrity." }
+    { icon: <Layers className="w-7 h-7 text-orange-400" />, title: "Energy Sector Support", desc: "Specialized handling and packing workflows for renewable components." },
+    { icon: <Gauge className="w-7 h-7 text-orange-400" />, title: "Oil & Gas Solutions", desc: "Robust protection and materials for energy infrastructure shipments." },
+    { icon: <Package className="w-7 h-7 text-orange-400" />, title: "Secure Packaging", desc: "Multi-layer protective systems to prevent transit damage." },
+    { icon: <Truck className="w-7 h-7 text-orange-400" />, title: "Safe Transport", desc: "Certified logistics partners and handling procedures ensure integrity." }
   ];
 
   const specs = [
@@ -43,7 +43,7 @@ export default function PackingIndustrial() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-gray-800 mb-4">
-                Packing <span className="text-blue-400">Services</span>
+                Packing <span className="text-orange-400">Services</span>
               </h1>
 
               <p className="mt-5 text-lg md:text-xl text-gray-700 max-w-2xl">
@@ -52,7 +52,7 @@ export default function PackingIndustrial() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="/contact" className="inline-block bg-blue-400 hover:bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-[1.02] transition">
+                <a href="/contact" className="inline-block bg-orange-400 hover:bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold shadow-lg transform hover:scale-[1.02] transition">
                   Get a Quote
                 </a>
                 <a href="/" className="inline-block border border-white/30 text-white px-6 py-3 rounded-lg hover:bg-white/10 transition">
@@ -103,7 +103,7 @@ export default function PackingIndustrial() {
       <section className="py-20 bg-gradient-to-b from-slate-50 to-gray-100">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
-            Key <span className="text-blue-600">Features</span>
+            Key <span className="text-orange-600">Features</span>
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -145,7 +145,7 @@ export default function PackingIndustrial() {
                 transition={{ delay: i * 0.1 }}
                 className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition"
               >
-                <p className="text-2xl font-bold text-blue-300">{spec.value}</p>
+                <p className="text-2xl font-bold text-orange-300">{spec.value}</p>
                 <p className="text-gray-300 text-sm mt-2 uppercase tracking-wide">{spec.label}</p>
               </motion.div>
             ))}
@@ -154,18 +154,18 @@ export default function PackingIndustrial() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 via-slate-700 to-gray-900 text-white text-center">
+      <section className="py-24 bg-gradient-to-r from-orange-600 via-slate-700 to-gray-900 text-white text-center">
         <div className="container mx-auto px-6">
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Protect Your Shipments?</h2>
 
-          <p className="text-blue-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-orange-200 mb-8 max-w-2xl mx-auto">
             Contact our packing specialists to design a tailored protective solution 
             for your components and materials.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:scale-105 transition transform">
+            <a href="/contact" className="bg-white text-orange-700 px-8 py-3 rounded-lg font-semibold hover:scale-105 transition transform">
               Contact Sales
             </a>
 

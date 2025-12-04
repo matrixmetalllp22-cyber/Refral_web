@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <span className="flex items-center space-x-2">
             <svg
-              className="w-4 h-4 text-blue-400"
+              className="w-4 h-4 text-orange-400"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -36,7 +36,7 @@ export default function Header() {
                 d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z"
               />
             </svg>
-            <a href="mailto:info@matrixmetals.com" className="hover:text-blue-300 transition-colors">
+            <a href="mailto:info@matrixmetals.com" className="hover:text-orange-300 transition-colors">
               info@matrixmetals.com
             </a>
           </span>
@@ -45,7 +45,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <span className="flex items-center space-x-2">
             <svg
-              className="w-4 h-4 text-blue-400"
+              className="w-4 h-4 text-orange-400"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -57,7 +57,7 @@ export default function Header() {
                 d="M3 5a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414A2 2 0 0111 7.414V10a2 2 0 01-.293.707l-1.414 1.414a16.001 16.001 0 007.586 7.586l1.414-1.414A2 2 0 0119 17h2.586a1 1 0 01.707.293l2.414 2.414A1 1 0 0124 21.414V22a2 2 0 01-2 2h-1c-9.941 0-18-8.059-18-18V5z"
               />
             </svg>
-            <a href="tel:+911234567890" className="hover:text-blue-300 transition-colors">
+            <a href="tel:+911234567890" className="hover:text-orange-300 transition-colors">
               +91 12345 67890
             </a>
           </span>
@@ -91,7 +91,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-md text-slate-700 hover:text-blue-700"
+              className="lg:hidden p-2 rounded-md text-slate-700 hover:text-orange-700"
             >
               {!isOpen ? (
                 <svg
@@ -134,7 +134,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block px-4 py-2 text-slate-700 hover:bg-blue-50 hover:text-blue-700 rounded-md"
+                  className="block px-4 py-2 text-slate-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

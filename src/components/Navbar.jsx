@@ -33,7 +33,7 @@ export default function SidebarNavigation() {
         {/* Logo Section */}
         <div className="p-6 border-b border-gray-700">
           <Link to="/" className="text-2xl font-extrabold text-[#F57C00]">
-            Matrix <span className="text-blue-400">Metals</span>
+            Matrix <span className="text-orange-400">Metals</span>
           </Link>
         </div>
 
@@ -87,7 +87,7 @@ export default function SidebarNavigation() {
             {/* Header/Close Button */}
             <div className="flex justify-between items-center mb-10">
               <Link to="/" onClick={() => setIsOpen(false)} className="text-2xl font-extrabold text-[#F57C00]">
-                Matrix <span className="text-blue-400">Metals</span>
+                Matrix <span className="text-orange-400">Metals</span>
               </Link>
               <button
                 onClick={() => setIsOpen(false)}

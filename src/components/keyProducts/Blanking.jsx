@@ -51,7 +51,7 @@ export default function Blanking() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left Section */}
           <div className="lg:col-span-1">
-            <h2 className="text-3xl font-bold text-blue-800 mb-4">Slitting</h2>
+            <h2 className="text-3xl font-bold text-orange-800 mb-4">Slitting</h2>
             <p className="text-gray-600 leading-relaxed">
               Slitting is a metal manufacturing process which is used to cut a
               wide coil of metal into a number of narrower coils. The wide coils

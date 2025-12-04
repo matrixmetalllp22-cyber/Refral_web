@@ -29,7 +29,7 @@ export default function HeroSection() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="inline-block px-6 py-3 rounded-md bg-brand text-white font-medium shadow hover:bg-blue-700 transition"
+              className="inline-block px-6 py-3 rounded-md bg-brand text-white font-medium shadow hover:bg-orange-700 transition"
             >
               Get in Touch
             </a>

@@ -99,14 +99,14 @@ const KeyProducts = () => {
       <div className="flex justify-center gap-6 mt-16">
         <button
           onClick={handlePrev}
-          className="bg-gray-800 hover:bg-blue-600 text-white p-4 rounded-xl shadow-lg 
+          className="bg-gray-800 hover:bg-orange-600 text-white p-4 rounded-xl shadow-lg 
                      transition-all duration-300 hover:scale-110 active:scale-95"
         >
           <ArrowLeft className="w-6 h-6" />
         </button>
         <button
           onClick={handleNext}
-          className="bg-gray-800 hover:bg-blue-600 text-white p-4 rounded-xl shadow-lg 
+          className="bg-gray-800 hover:bg-orange-600 text-white p-4 rounded-xl shadow-lg 
                      transition-all duration-300 hover:scale-110 active:scale-95"
         >
           <ArrowRight className="w-6 h-6" />
