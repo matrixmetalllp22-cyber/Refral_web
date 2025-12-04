@@ -37,7 +37,7 @@ export default function Careers() {
       title: 'Professional Growth',
       description: 'Continuous learning and development opportunities',
       icon: (
-        <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       )
@@ -46,7 +46,7 @@ export default function Careers() {
       title: 'Health & Wellness',
       description: 'Comprehensive health insurance and wellness programs',
       icon: (
-        <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       )
@@ -55,7 +55,7 @@ export default function Careers() {
       title: 'Work-Life Balance',
       description: 'Flexible working hours and remote work options',
       icon: (
-        <svg className="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="h-8 w-8 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       )
@@ -65,7 +65,7 @@ export default function Careers() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-20">
+      <section className="bg-orange-900 text-white py-20">
         <div className="container-custom">
           <h1 className="heading-primary text-white mb-6">
             Join Our Team
@@ -126,7 +126,7 @@ export default function Careers() {
                     </h3>
                     <p className="text-gray-600 mb-4">{job.description}</p>
                     <div className="flex flex-wrap gap-4 text-sm">
-                      <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+                      <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">
                         {job.department}
                       </span>
                       <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">
@@ -137,7 +137,7 @@ export default function Careers() {
                       </span>
                     </div>
                   </div>
-                  <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                  <button className="bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700 transition-colors">
                     Apply Now
                   </button>
                 </div>
@@ -156,7 +156,7 @@ export default function Careers() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Send us your resume and we'll keep you in mind for future opportunities.
           </p>
-          <button className="bg-white text-blue-900 px-8 py-3 rounded-md hover:bg-gray-100 transition-colors">
+          <button className="bg-white text-orange-900 px-8 py-3 rounded-md hover:bg-gray-100 transition-colors">
             Submit Your Resume
           </button>
         </div>

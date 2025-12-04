@@ -93,7 +93,7 @@ Additional Features: Features like PLC control, integrated web guides, different
                   onClick={() => setTab(t)}
                   className={`px-3 py-2 text-sm font-semibold rounded-md transition ${
                     tab === t
-                      ? "bg-blue-800 text-white shadow"
+                      ? "bg-orange-800 text-white shadow"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
@@ -104,7 +104,7 @@ Additional Features: Features like PLC control, integrated web guides, different
 
             {/* Tab card */}
             <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg p-5 border border-slate-200">
-              <h4 className="text-sm font-semibold text-blue-800 mb-2 capitalize">{tab}</h4>
+              <h4 className="text-sm font-semibold text-orange-800 mb-2 capitalize">{tab}</h4>
               <p className="text-sm text-gray-700 leading-relaxed">{tabContent[tab]}</p>
             </div>
           </motion.aside>

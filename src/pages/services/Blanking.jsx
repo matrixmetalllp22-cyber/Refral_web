@@ -446,22 +446,22 @@ import CountUp from "react-countup";
 export default function BlankingIndustrial() {
   const features = [
     {
-      icon: <Layers className="w-8 h-8 text-blue-500" />,
+      icon: <Layers className="w-8 h-8 text-orange-500" />,
       title: "Precision Stamping",
       desc: "CNC-driven die cutting for perfect steel blanks with micron-level accuracy.",
     },
     {
-      icon: <Gauge className="w-8 h-8 text-blue-500" />,
+      icon: <Gauge className="w-8 h-8 text-orange-500" />,
       title: "Appliance Grade",
       desc: "Meets global standards for appliance and sheet-metal production.",
     },
     {
-      icon: <Cog className="w-8 h-8 text-blue-500" />,
+      icon: <Cog className="w-8 h-8 text-orange-500" />,
       title: "Quality Control",
       desc: "Fully automated inspection and defect elimination systems.",
     },
     {
-      icon: <Zap className="w-8 h-8 text-blue-500" />,
+      icon: <Zap className="w-8 h-8 text-orange-500" />,
       title: "High Throughput",
       desc: "10,000+ blanks daily powered by robotic feeding and automation.",
     },
@@ -494,14 +494,14 @@ export default function BlankingIndustrial() {
             transition={{ duration: 0.6 }}
             className="text-5xl md:text-6xl font-extrabold leading-tight mb-6 tracking-tight"
           >
-            Precision <span className="text-blue-400">Blanking</span> Services
+            Precision <span className="text-orange-400">Blanking</span> Services
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-blue-100 max-w-3xl mb-10"
+            className="text-lg md:text-xl text-orange-100 max-w-3xl mb-10"
           >
             Delivering world-class blanking and stamping precision for manufacturing
             and home appliance industries with unmatched consistency.
@@ -510,7 +510,7 @@ export default function BlankingIndustrial() {
           <motion.a
             href="/contact"
             whileHover={{ scale: 1.05 }}
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg"
           >
             Request a Quote
           </motion.a>
@@ -521,7 +521,7 @@ export default function BlankingIndustrial() {
       <section className="py-20 bg-gradient-to-b from-slate-50 to-gray-100">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800">
-            Industrial <span className="text-blue-600">Capabilities</span>
+            Industrial <span className="text-orange-600">Capabilities</span>
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -550,7 +550,7 @@ export default function BlankingIndustrial() {
       <section className="py-24 bg-gradient-to-r from-gray-900 via-slate-800 to-gray-900 text-white">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Technical <span className="text-blue-400">Specifications</span>
+            Technical <span className="text-orange-400">Specifications</span>
           </h2>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
@@ -563,12 +563,12 @@ export default function BlankingIndustrial() {
                 className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl text-center hover:bg-white/20 transition"
               >
                 {typeof stat.value === "number" ? (
-                  <p className="text-4xl font-bold text-blue-400">
+                  <p className="text-4xl font-bold text-orange-400">
                     <CountUp end={stat.value} duration={2} />
                     {stat.unit}
                   </p>
                 ) : (
-                  <p className="text-2xl font-semibold text-blue-300">
+                  <p className="text-2xl font-semibold text-orange-300">
                     {stat.value}
                   </p>
                 )}
@@ -582,7 +582,7 @@ export default function BlankingIndustrial() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 via-slate-700 to-gray-900 text-white text-center">
+      <section className="py-24 bg-gradient-to-r from-orange-600 via-slate-700 to-gray-900 text-white text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -592,14 +592,14 @@ export default function BlankingIndustrial() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Optimize Your Production?
           </h2>
-          <p className="text-blue-200 mb-10 max-w-2xl mx-auto">
+          <p className="text-orange-200 mb-10 max-w-2xl mx-auto">
             Partner with us for industry-leading blanking solutions engineered for
             precision, efficiency, and reliability.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="/contact"
-              className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform"
+              className="bg-white text-orange-700 px-8 py-3 rounded-lg font-semibold shadow hover:scale-105 transition-transform"
             >
               Contact Us
             </a>

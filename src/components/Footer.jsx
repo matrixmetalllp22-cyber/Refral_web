@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-blue-200">Matrix Metals LLP</h3>
+            <h3 className="text-xl font-bold mb-4 text-orange-200">Matrix Metals LLP</h3>
             <p className="text-slate-300">
               Creating value through innovative steel processing and sustainable practices.
             </p>

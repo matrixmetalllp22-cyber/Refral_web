@@ -87,7 +87,7 @@ const LeadershipAndClients = () => {
               <p className="text-lg sm:text-xl text-gray-600 mb-4 md:mb-6">
                 {leader.role}
               </p>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base border-l-4 pl-4 border-blue-500">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base border-l-4 pl-4 border-orange-500">
                 {leader.quote}
               </p>
             </div>

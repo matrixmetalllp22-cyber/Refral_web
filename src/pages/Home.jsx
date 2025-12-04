@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* Button aligned right */}
       <div className="flex justify-end mt-6">
-        <button className="bg-blue-300 hover:bg-blue-400 text-white font-medium px-6 py-3 rounded-lg shadow transition duration-300">
+        <button className="bg-orange-300 hover:bg-orange-400 text-white font-medium px-6 py-3 rounded-lg shadow transition duration-300">
           Read More
         </button>
       </div>
@@ -59,8 +59,8 @@ export default function Home() {
 
       {/* LEFT SIDE */}
       <div className="space-y-6">
-        <h2 className="p-10 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
-          Engineering Tomorrow’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">Solutions</span>
+        <h2 cl   assName="p-10 text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
+          Engineering Tomorrow's <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">Solutions</span>
         </h2>
 
         <p className="p-10 text-gray-700 text-lg leading-relaxed max-w-lg">
@@ -86,7 +86,7 @@ export default function Home() {
                        hover:shadow-[0_12px_35px_rgba(0,0,0,0.12)]
                        transition-all duration-500 hover:-translate-y-1"
           >
-            <h3 className="text-4xl font-extrabold text-blue-600">{item.number}</h3>
+            <h3 className="text-4xl font-extrabold text-orange-600">{item.number}</h3>
             <p className="mt-2 text-gray-700 font-medium text-sm tracking-wide uppercase">
               {item.label}
             </p>
