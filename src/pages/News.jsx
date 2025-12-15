@@ -1041,7 +1041,7 @@
 import React, { useState, useEffect, memo } from "react";
 import axios from "axios";
 
-// -------------------- CARD --------------------
+// ---------------- CARD ----------------
 const NewsCard = memo(({ article }) => {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -1055,7 +1055,6 @@ const NewsCard = memo(({ article }) => {
 
   return (
     <article className="group bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row w-full">
-      
       <div className="w-full md:w-1/3 h-64 md:h-auto overflow-hidden">
         {article.urlToImage ? (
           <img
@@ -1063,10 +1062,6 @@ const NewsCard = memo(({ article }) => {
             alt={article.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
-            onError={(e) =>
-              (e.target.src =
-                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c")
-            }
           />
         ) : (
           <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -1075,7 +1070,7 @@ const NewsCard = memo(({ article }) => {
         )}
       </div>
 
-      <div className="p-6 md:p-8 flex flex-col md:w-2/3 text-black">
+      <div className="p-6 md:p-8 flex flex-col md:w-2/3">
         <div className="flex justify-between items-center mb-3">
           <span className="text-xs bg-black text-white px-3 py-1 rounded-full">
             {article.source?.name || "News"}
@@ -1085,7 +1080,7 @@ const NewsCard = memo(({ article }) => {
           </span>
         </div>
 
-        <h3 className="text-xl font-bold mb-3 group-hover:text-orange-500 transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold mb-3 group-hover:text-orange-500 transition">
           {article.title}
         </h3>
 
@@ -1097,7 +1092,7 @@ const NewsCard = memo(({ article }) => {
           href={article.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto inline-block bg-orange-500 text-white font-bold px-6 py-3 rounded-xl hover:bg-orange-400 transition"
+          className="mt-auto bg-orange-500 text-white font-bold px-6 py-3 rounded-xl hover:bg-orange-400 transition"
         >
           Read Article
         </a>
@@ -1106,61 +1101,49 @@ const NewsCard = memo(({ article }) => {
   );
 });
 
-// -------------------- MAIN --------------------
+// ---------------- MAIN ----------------
 const AluminumNewsDashboard = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const NEWS_API_KEY = "7347fdca6aa84c0c9e4c39358710b34e";
-  const GNEWS_API_KEY = "YOUR_GNEWS_API_KEY"; // 👈 add once
-
+  const API_KEY = "7347fdca6aa84c0c9e4c39358710b34e";
   const query = "aluminum OR aluminium OR bauxite OR alumina OR LME";
 
   const fromDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
     .toISOString()
     .split("T")[0];
 
-  // ---------- PRIMARY API ----------
-  const fetchFromNewsAPI = async () => {
+  // ---------- PRIMARY ----------
+  const fetchEverything = async () => {
     const res = await axios.get(
       `https://newsapi.org/v2/everything?q=${encodeURIComponent(
         query
-      )}&from=${fromDate}&language=en&sortBy=publishedAt&pageSize=40&apiKey=${NEWS_API_KEY}`
+      )}&from=${fromDate}&language=en&sortBy=publishedAt&pageSize=40&apiKey=${API_KEY}`
     );
-
     return res.data.articles;
   };
 
-  // ---------- FALLBACK API ----------
-  const fetchFromGNews = async () => {
+  // ---------- FALLBACK ----------
+  const fetchHeadlines = async () => {
     const res = await axios.get(
-      `https://gnews.io/api/v4/search?q=${encodeURIComponent(
+      `https://newsapi.org/v2/top-headlines?q=${encodeURIComponent(
         query
-      )}&from=${fromDate}&lang=en&max=40&apikey=${GNEWS_API_KEY}`
+      )}&language=en&pageSize=40&apiKey=${API_KEY}`
     );
-
-    return res.data.articles.map((a) => ({
-      title: a.title,
-      description: a.description,
-      url: a.url,
-      urlToImage: a.image,
-      publishedAt: a.publishedAt,
-      source: { name: a.source.name },
-    }));
+    return res.data.articles;
   };
 
-  // ---------- FETCH LOGIC ----------
   const loadNews = async () => {
     try {
       setLoading(true);
-      const articles = await fetchFromNewsAPI();
-      setArticles(articles.slice(0, 20));
+      const primary = await fetchEverything();
+      setArticles(primary.slice(0, 20));
     } catch (err) {
-      console.warn("NewsAPI failed → switching to GNews");
+      console.warn("Primary API failed → using fallback");
       try {
-        const fallbackArticles = await fetchFromGNews();
-        setArticles(fallbackArticles.slice(0, 20));
-      } catch (fallbackErr) {
+        const fallback = await fetchHeadlines();
+        setArticles(fallback.slice(0, 20));
+      } catch (e) {
         console.error("Both APIs failed");
       }
     } finally {
@@ -1168,31 +1151,23 @@ const AluminumNewsDashboard = () => {
     }
   };
 
-  // ---------- AUTO REFRESH (10 MIN) ----------
+  // ---------- AUTO REFRESH ----------
   useEffect(() => {
-    loadNews(); // initial load
-
-    const interval = setInterval(() => {
-      loadNews();
-    }, 10 * 60 * 1000); // 10 minutes
-
+    loadNews();
+    const interval = setInterval(loadNews, 10 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-white to-gray-300 text-black">
-      <header className="text-center pt-16 pb-12 px-6">
-        <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow border border-gray-300 mb-8">
+    <div className="min-h-screen bg-gradient-to-r from-white to-gray-300">
+      <header className="text-center pt-16 pb-12">
+        <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow mb-8 border">
           <div className="w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
-          <span className="text-gray-700">
-            LIVE • Auto-refresh every 10 mins
-          </span>
+          <span className="text-gray-700">LIVE • Auto-refresh 10 mins</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-black">ALUMINUM NEWS</h1>
-        <p className="mt-4 text-lg text-gray-600">
-          Last 7 Days • Global Industry Updates
-        </p>
+        <p className="mt-4 text-lg text-gray-600">Last 7 Days</p>
       </header>
 
       <main className="max-w-6xl mx-auto px-6 py-10 space-y-8">
@@ -1202,10 +1177,6 @@ const AluminumNewsDashboard = () => {
             ))
           : articles.map((a, i) => <NewsCard key={i} article={a} />)}
       </main>
-
-      <footer className="text-center py-8 text-gray-600 text-sm border-t border-gray-300">
-        NewsAPI + GNews • Auto-updating • {new Date().getFullYear()}
-      </footer>
     </div>
   );
 };
