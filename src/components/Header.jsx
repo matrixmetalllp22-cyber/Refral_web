@@ -30,7 +30,7 @@ export default function Header() {
     { name: "About Us", href: "/about" },
     { name: "Products & Solutions", href: "/products" },
     { name: "Quality", href: "/industries" },
-    { name: "News & Media", href: "/news" },
+    // { name: "News & Media", href: "/news" },
     { name: "Contact", href: "/contact" },
     { name: "Applications", href: "/applications" },
     { name: "Case Studies", href: "/case-studies" },
